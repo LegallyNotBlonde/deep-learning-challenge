@@ -25,18 +25,17 @@ ___
 
 * A **Sequential model** with **ReLU-activated 2 hidden layers**, compiled for binary classification, achieving an accuracy of 72%.
 
-* In an attempt to improve accuracy, a **Sequential model** with **LeakyReLU-activated 3 hidden layers** was compiled for binary classification. The model's accuracy was initially 72% but dropped after several runs. To explore potential improvements, the **learning rate** was adjusted from its default value of 0.001 to 0.01 and higher during model compilation, and the **batch size** was changed from the default of 32 during training. Despite multiple runs with these adjustments, no improvement in accuracy was observed, so the settings were reverted to their defaults.
+* In an attempt to improve accuracy, a **Sequential model** with **LeakyReLU-activated 3 hidden layers** was compiled for binary classification. To explore potential improvements, the **learning rate** was adjusted from its default value of 0.001 to 0.01 and higher during model compilation, and the **batch size** was changed from the default of 32 to 16 during training. Despite multiple runs with these adjustments, the accuracy dropped significantly lower than the previous model's 72% accuracy. The final configuration, using 32 batches and a learning rate of 0.001, still resulted in the 46% accuracy, a notable drop from the initial model's performance.
 
-* **Random Forest** was used as anternative option, and although initially the model seemed underperforming, the last run showed an accuracy of 72%, similar to the Sequential models. As mentioned above, to make this model perform, some features were dropped to improve accuracy. This model was used as it is well fitted for unbalanced data.
+* **Random Forest** was used as an alternative option for unbalanced data. Initially, after excluding a few features like 'APPLICATION_TYPE_Other', 'APPLICATION_TYPE_T19', 'INCOME_AMT_50M+', and 'SPECIAL_CONSIDERATIONS_Y', it achieved 70% accuracy, similar to the Sequential models. After identifying the 3 most influential features, additional less relevant features were dropped. However, after this refinement, the accuracy dropped to 66%.
 
-* A **Functional API model** with 3 **ReLU**-activated hidden layers, **dropout** for regularization, and a **sigmoid output layer** was also tried, but it showed lower accuracy than the initial Sequential model.
+* A **Functional API model** with 3 **ReLU**-activated hidden layers, **dropout** for regularization, and a **sigmoid output layer** was also tried, but it showed similar accuracy of 72% as the initial Sequential model.
 <p> *Note: Accuracy fluctuations across models on each new run were likely due to random initialization, stochastic training, and overfitting. Setting a random seed and using cross-validation will help improve consistency and reduce overfitting.*
 
 ___
 
 ## Summary
-The **Sequential model** with 2 hidden layers using **ReLU activation** and binary classification achieved the highest accuracy of 72.11%. While this is decent, further improvements might be made by categorizing the highly skewed 'ASK_AMT' feature to prevent overfitting. Additionally, using metrics like **Precision, Recall, F1-Score**, and the **Confusion Matrix** could help identify and address biases in model predictions. Although model accuracy might be limited due to inherent data properties or external factors like the broader economy, exploring feature engineering and further tuning could yield better results.
-___
+The **Sequential model** with 2 hidden layers using **ReLU activation** and binary classification achieved the highest accuracy of 72%. While this is decent, further improvements might imptove that. However, it's imprtant to acknoledge that model accuracy can be limited by inherent data properties (e.g., data quality, imbalance, or feature relevance) as well as external factors like project strategy, the specific nature of the problem (e.g., public health), or broader economic and environmental conditions. **Using additional metrics like Precision, Recall, and F1-Score** can help identify potential biases in model predictions, especially in imbalanced datasets where accuracy alone may be misleading. Further improvements might be achievable through more advanced feature engineering, better data collection, hyperparameter tuning, and the use of these metrics to better evaluate model performance and fairness.
 
 ### Ethical Considerations
 * To ensure fair predictions, sensitive data like company names and EINs should be removed. 
