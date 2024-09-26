@@ -35,14 +35,15 @@ ___
 ___
 
 ## Summary
-The **Sequential model** with 2 hidden layers using **ReLU activation** and binary classification achieved the highest accuracy of 72%. While this is decent, further improvements might imptove that. However, it's imprtant to acknoledge that model accuracy can be limited by inherent data properties (e.g., data quality, imbalance, or feature relevance) as well as external factors like project strategy, the specific nature of the problem (e.g., public health), or broader economic and environmental conditions. **Using additional metrics like Precision, Recall, and F1-Score** can help identify potential biases in model predictions, especially in imbalanced datasets where accuracy alone may be misleading. Further improvements might be achievable through more advanced feature engineering, better data collection, hyperparameter tuning, and the use of these metrics to better evaluate model performance and fairness.
+The **Sequential model** with 2 hidden layers using **ReLU activation** and binary classification achieved the highest accuracy of 72%. While this is a decent result, further enhancements could improve performance. However, it's important to acknowledge that model accuracy can be limited by inherent data properties (e.g., data quality, imbalance, or feature relevance) as well as external factors like project strategy, the specific nature of the problem (e.g., public health), or broader economic and environmental conditions. **Using additional metrics like Precision, Recall, and F1-Score** can help identify potential biases in model predictions, especially in imbalanced datasets where accuracy alone may be misleading. Further improvements may be achievable through more advanced feature engineering, better data collection, hyperparameter tuning, and the use of these metrics to better evaluate model performance and fairness.
+___
 
-### Ethical Considerations
+## Ethical Considerations
 * To ensure fair predictions, sensitive data like company names and EINs should be removed. 
 * Maintain transparency in model decision-making, and regularly verify data accuracy to prevent harm to organizations. 
 * Address potential biases in the model to ensure equitable outcomes for all applicants.
 
 ___
 
-### Resources
+## Resources
 IRS: [Tax Exempt Organization Search Bulk Data Downloads](https://www.irs.gov/charities-non-profits/tax-exempt-organization-search-bulk-data-downloads).
